@@ -7,9 +7,6 @@ class encn_Cambridge {
     }
 
     async displayName() {
-        let locale = await api.locale();
-        if (locale.indexOf('CN') != -1) return '剑桥英汉双解(简体)';
-        if (locale.indexOf('TW') != -1) return '劍橋英漢雙解(簡體)';
         return 'Cambridge EN->CN Dictionary (SC)';
     }
 
@@ -92,8 +89,8 @@ class encn_Cambridge {
                         if (!eng_tran) continue;
                         let definition = '';
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
-                        chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
-                        let tran = `<span class='tran'>${eng_tran}${chn_tran}</span>`;
+                        chn_tran = `<span class='chn_tran'></span>`;
+                        let tran = `<span class='tran'>${eng_tran}</span>`;
                         definition += phrasehead ? `${phrasehead}${tran}` : `${pos}${tran}`;
 
                         // make exmaple segement
@@ -104,7 +101,7 @@ class encn_Cambridge {
                                 if (index > this.maxexample - 1) break; // to control only 2 example sentence.
                                 let eng_examp = T(examp.querySelector('.eg'));
                                 let chn_examp = T(examp.querySelector('.trans'));
-                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='chn_sent'>${chn_examp}</span></li>`;
+                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='chn_sent'></span></li>`;
                             }
                             definition += '</ul>';
                         }
