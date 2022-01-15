@@ -32,8 +32,8 @@ class encn_Cambridge {
             else
                 return node.innerText.trim();
         }
-
-        let base = 'https://dictionary.cambridge.org/search/english-chinese-simplified/direct/?q=';
+// neu sai thi sua lai cho nay ne
+        let base = 'https://dictionary.cambridge.org/dictionary/english/';
         let url = base + encodeURIComponent(word);
         let doc = '';
         try {
