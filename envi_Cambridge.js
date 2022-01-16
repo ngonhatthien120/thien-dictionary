@@ -7,7 +7,7 @@ class encn_Cambridge {
     }
 
     async displayName() {
-        return 'Cambridge EN-> VI Dictionary (SC)';
+        return 'Cambridge EN-> VI Dictionary';
     }
 
     setOptions(options) {
