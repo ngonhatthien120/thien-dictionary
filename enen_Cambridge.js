@@ -32,8 +32,8 @@ class encn_Cambridge {
             else
                 return node.innerText.trim();
         }
-
-        let base = 'https://dictionary.cambridge.org/search/english-vietnamese/direct/?q=';
+// neu sai thi sua lai cho nay ne
+        let base = 'https://dictionary.cambridge.org/dictionary/english/';
         let url = base + encodeURIComponent(word);
         let doc = '';
         try {
@@ -89,8 +89,8 @@ class encn_Cambridge {
                         if (!eng_tran) continue;
                         let definition = '';
                         eng_tran = `<span class='eng_tran'>${eng_tran.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span>`;
-                        chn_tran = `<span class='chn_tran'>${chn_tran}</span>`;
-                        let tran = `<span class='tran'>${eng_tran}${chn_tran}</span>`;
+                        chn_tran = `<span class='chn_tran'></span>`;
+                        let tran = `<span class='tran'>${eng_tran}</span>`;
                         definition += phrasehead ? `${phrasehead}${tran}` : `${pos}${tran}`;
 
                         // make exmaple segement
@@ -101,7 +101,7 @@ class encn_Cambridge {
                                 if (index > this.maxexample - 1) break; // to control only 2 example sentence.
                                 let eng_examp = T(examp.querySelector('.eg'));
                                 let chn_examp = T(examp.querySelector('.trans'));
-                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='chn_sent'>${chn_examp}</span></li>`;
+                                definition += `<li class='sent'><span class='eng_sent'>${eng_examp.replace(RegExp(expression, 'gi'),`<b>${expression}</b>`)}</span><span class='chn_sent'></span></li>`;
                             }
                             definition += '</ul>';
                         }
