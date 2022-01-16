@@ -3,11 +3,11 @@ class encn_Cambridge {
     constructor(options) {
         this.options = options;
         this.maxexample = 2;
-        this.word = '';
+        this.word = ''
     }
 
     async displayName() {
-        return 'Cambridge EN->CN Dictionary (SC)';
+        return 'Cambridge ENGLISH Dictionary';
     }
 
     setOptions(options) {
