@@ -120,7 +120,7 @@ class encn_Cambridge {
         }
         return notes;
     }
-
+/*
     async findYoudao(word) {
         if (!word) return [];
 
@@ -217,7 +217,7 @@ class encn_Cambridge {
                 return node.innerText.trim();
         }
     }
-
+*/
     renderCSS() {
         let css = `
             <style>
